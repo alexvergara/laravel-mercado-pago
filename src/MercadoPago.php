@@ -2,10 +2,14 @@
 
 namespace LaravelMercadoPago;
 
-use MercadoPago\{
+/*use MercadoPago\{
   SDK,
   InstoreOrder
-};
+};*/
+
+//use MercadoPago\Client\Payment\PaymentClient;
+//use MercadoPago\Exceptions\MPApiException;
+use MercadoPago\MercadoPagoConfig;
 
 use LaravelMercadoPago\Traits\EntityTrait;
 
@@ -319,7 +323,8 @@ class MercadoPago
    */
   public function initSdk($access_token = null)
   {
-    SDK::setAccessToken($access_token ?? $this->getAccesToken());
+    //SDK::setAccessToken($access_token ?? $this->getAccesToken());
+    MercadoPagoConfig::setAccessToken($access_token ?? $this->getAccesToken());
   }
 
 
